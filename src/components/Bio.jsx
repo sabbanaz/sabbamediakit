@@ -1,16 +1,29 @@
 export default function Bio() {
   return (
     <section className="bio">
-      <p className="bio__text">
-        Born in Tehran during the Iran-Iraq War and raised as an asylum seeker in
-        the United States, <strong>Sabba Nazhand</strong> spent 20+ years in tech
-        leadership — driving $500M+ in revenue across companies like Social
-        Tables, Andela, Teampay, and 2U. A personal crisis led him to
-        psychedelic-assisted therapy, and to building the infrastructure the
-        healing field was missing. <strong>Safar</strong> uses voice-based AI and
-        adaptive protocols to help practitioners measure and sustain client
-        transformation between sessions, powered by Salience Intelligence™.
-      </p>
+      <div className="bio__text">
+        <p>
+          <strong>Sabba</strong> is a seasoned tech executive, founder, and advisor
+          with 20+ of experience in sales and leadership. He is the Founder &amp;
+          CEO of <strong>Safar</strong>, an integration operating system for human
+          transformation. His journey has been shaped by a commitment to
+          authenticity and conscious leadership across the emerging psychedelic
+          ecosystem. His personal transformation through plant medicine has
+          redefined how he approaches both life, business, and leading with
+          empathy, intention, and a focus on holistic well-being.
+        </p>
+        <p style={{ marginTop: 16 }}>
+          Born in Tehran during the Iran-Iraq War and raised as an asylum seeker
+          in the United States, Sabba brings a unique perspective to the
+          challenges of personal growth and resilience.
+        </p>
+        <p style={{ marginTop: 16 }}>
+          He&rsquo;s led teams across three continents, leading north of $500M in
+          revenue and working with some of the most impactful companies on the
+          planet, and is passionate about integrating technology with human
+          connection.
+        </p>
+      </div>
       <blockquote className="bio__quote">
         <p>
           &ldquo;People don&rsquo;t fail because they lack insight. They fail
