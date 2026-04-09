@@ -15,21 +15,14 @@ const badgeClass = (type) => {
   return map[type] || ''
 }
 
-export default function MediaCard({ item, onClick }) {
+export default function MediaCard({ item }) {
   const Tag = item.url ? 'a' : 'div'
   const linkProps = item.url
     ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' }
     : {}
 
   return (
-    <Tag
-      className="media-item"
-      {...linkProps}
-      onClick={(e) => {
-        e.preventDefault()
-        onClick(item)
-      }}
-    >
+    <Tag className="media-item" {...linkProps}>
       <div className="media-item__thumb">
         <Thumbnail item={item} size={40} />
       </div>
