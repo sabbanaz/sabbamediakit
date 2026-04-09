@@ -523,18 +523,22 @@ body {
   margin-bottom: var(--sp-3);
 }
 
-.media-card__emoji {
-  font-size: 24px;
-  line-height: 1;
+.media-card__thumb {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,0.5);
-  border: 1px solid var(--glass-border);
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.3);
+}
+
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  display: block;
 }
 
 .media-card__title-wrap {
@@ -646,16 +650,13 @@ body {
 }
 
 .modal__icon {
-  font-size: var(--fs-2xl);
   margin-bottom: var(--sp-3);
   width: 56px;
   height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,0.5);
-  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.3);
 }
 
 .modal__name {

@@ -1,3 +1,5 @@
+import Thumbnail from './Thumbnail'
+
 const badgeClass = (type) => {
   const map = {
     Podcast: 'badge--podcast',
@@ -29,9 +31,9 @@ export default function MediaCard({ item, onClick }) {
       }}
     >
       <div className="media-card__header">
-        <span className="media-card__emoji" aria-hidden="true">
-          {item.emoji}
-        </span>
+        <div className="media-card__thumb">
+          <Thumbnail item={item} size={48} />
+        </div>
         <div className="media-card__title-wrap">
           <div className="media-card__name">{item.name}</div>
           {item.episode && (

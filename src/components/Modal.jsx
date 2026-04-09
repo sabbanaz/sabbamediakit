@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import Thumbnail from './Thumbnail'
 
 const badgeClass = (type) => {
   const map = {
@@ -64,8 +65,8 @@ export default function Modal({ item, onClose }) {
       aria-label={item.name}
     >
       <div className="modal" ref={modalRef}>
-        <div className="modal__icon" aria-hidden="true">
-          {item.emoji}
+        <div className="modal__icon">
+          <Thumbnail item={item} size={56} />
         </div>
         <div className="modal__name">{item.name}</div>
         {item.episode && <div className="modal__episode">{item.episode}</div>}
