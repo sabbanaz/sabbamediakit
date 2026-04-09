@@ -12,7 +12,7 @@ export default function SpeakingTopics() {
           <div
             key={topic.label}
             className="topic-chip"
-            style={{ borderLeftColor: topic.color, borderLeftWidth: 4, borderLeftStyle: 'solid' }}
+            style={{ borderLeftWidth: 4, borderLeftStyle: 'solid', borderLeftColor: topic.color }}
           >
             {topic.label}
           </div>

@@ -1,15 +1,8 @@
 export default function Header() {
   return (
     <header className="header">
-      <img
-        className="header__watermark"
-        src="/safar-moon-eye.png"
-        alt=""
-        aria-hidden="true"
-      />
-
       <div className="header__photo-wrap">
-        <img src="/sabba-headshot.png" alt="Sabba Nazhand" />
+        <img src="/sabbamediakit/sabba-headshot.png" alt="Sabba Nazhand" />
       </div>
 
       <div className="header__center">

@@ -14,33 +14,67 @@ export default function App() {
   return (
     <>
       <div className="gradient-bar" />
-      <div className="app-wrapper">
-        <Header />
-        <Bio />
-        <Recognition />
 
-        <MediaSection
-          title="Podcast Appearances"
-          items={podcasts}
-          onCardClick={setActiveItem}
+      {/* Atmospheric background */}
+      <div className="atmosphere">
+        <img
+          className="atmosphere__watermark"
+          src="/sabbamediakit/safar-moon-eye.png"
+          alt=""
+          aria-hidden="true"
         />
-        <MediaSection
-          title="Published Articles"
-          items={articles}
-          onCardClick={setActiveItem}
-        />
-        <MediaSection
-          title="Press & Features"
-          items={press}
-          onCardClick={setActiveItem}
-        />
-        <MediaSection
-          title="Speaking, Keynotes & Panels"
-          items={speaking}
-          onCardClick={setActiveItem}
-        />
-        <SpeakingTopics />
-        <Footer />
+        <div className="atmosphere__orb atmosphere__orb--1" />
+        <div className="atmosphere__orb atmosphere__orb--2" />
+        <div className="atmosphere__orb atmosphere__orb--3" />
+      </div>
+
+      {/* Floating toolbar */}
+      <nav className="toolbar" aria-label="Quick navigation">
+        <button className="toolbar__btn toolbar__btn--active" aria-label="Home" title="Home">
+          ⌂
+        </button>
+        <button className="toolbar__btn" aria-label="Podcasts" title="Podcasts">
+          🎙
+        </button>
+        <button className="toolbar__btn" aria-label="Articles" title="Articles">
+          ✎
+        </button>
+        <button className="toolbar__btn" aria-label="Contact" title="Contact">
+          ✉
+        </button>
+      </nav>
+
+      {/* Main glass shell */}
+      <div className="glass-shell">
+        <div className="glass-main">
+          <Header />
+          <hr className="glass-divider" />
+          <Bio />
+          <Recognition />
+
+          <MediaSection
+            title="Podcast Appearances"
+            items={podcasts}
+            onCardClick={setActiveItem}
+          />
+          <MediaSection
+            title="Published Articles"
+            items={articles}
+            onCardClick={setActiveItem}
+          />
+          <MediaSection
+            title="Press & Features"
+            items={press}
+            onCardClick={setActiveItem}
+          />
+          <MediaSection
+            title="Speaking, Keynotes & Panels"
+            items={speaking}
+            onCardClick={setActiveItem}
+          />
+          <SpeakingTopics />
+          <Footer />
+        </div>
       </div>
 
       {activeItem && (
