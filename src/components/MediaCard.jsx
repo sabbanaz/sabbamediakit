@@ -16,35 +16,33 @@ const badgeClass = (type) => {
 }
 
 export default function MediaCard({ item, onClick }) {
+  const Tag = item.url ? 'a' : 'div'
+  const linkProps = item.url
+    ? { href: item.url, target: '_blank', rel: 'noopener noreferrer' }
+    : {}
+
   return (
-    <div
-      className="media-card"
-      tabIndex={0}
-      role="button"
-      aria-label={`View details for ${item.name}`}
-      onClick={() => onClick(item)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault()
-          onClick(item)
-        }
+    <Tag
+      className="media-item"
+      {...linkProps}
+      onClick={(e) => {
+        e.preventDefault()
+        onClick(item)
       }}
     >
-      <div className="media-card__header">
-        <div className="media-card__thumb">
-          <Thumbnail item={item} size={48} />
-        </div>
-        <div className="media-card__title-wrap">
-          <div className="media-card__name">{item.name}</div>
-          {item.episode && (
-            <div className="media-card__episode">{item.episode}</div>
-          )}
-        </div>
-        <span className={`media-card__badge ${badgeClass(item.type)}`}>
-          {item.type}
-        </span>
+      <div className="media-item__thumb">
+        <Thumbnail item={item} size={40} />
       </div>
-      <div className="media-card__detail">{item.detail}</div>
-    </div>
+      <div className="media-item__info">
+        <div className="media-item__name">{item.name}</div>
+        <div className="media-item__detail">
+          {item.episode ? `${item.episode} — ` : ''}{item.detail}
+        </div>
+      </div>
+      <span className={`media-item__badge ${badgeClass(item.type)}`}>
+        {item.type}
+      </span>
+      <span className="media-item__arrow">&rarr;</span>
+    </Tag>
   )
 }
