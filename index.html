@@ -1,19 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sabba Nazhand — Media Kit</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <script type="module" crossorigin src="/sabbamediakit/assets/index-BMQoOIdc.js"></script>
-    <link rel="stylesheet" crossorigin href="/sabbamediakit/assets/index-CeNC-KXA.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabba Nazhand — Media Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #353c46;
+    --bg-card: #3d444e;
+    --bg-card-hover: #464e58;
+    --surface: #485058;
+    --border: #565e68;
+    --cream: #f5f0e8;
+    --cream-dim: #c8c0b4;
+    --sand: #a89e90;
+    --terracotta: #c4613a;
+    --terracotta-glow: #d4714a;
+    --gold: #b8943e;
+    --gold-light: #d4ad4e;
+    --sage: #6b8c5e;
+    --sage-light: #8aad7a;
+    --mist: #6a6460;
+    --gradient-safar: linear-gradient(135deg, #c4613a 0%, #b8943e 40%, #6b8c5e 100%);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg-deep); color: var(--cream); -webkit-font-smoothing: antialiased; line-height: 1.5; }
+  .page { max-width: 900px; margin: 0 auto; position: relative; overflow: visible; }
+  .gradient-bar { height: 4px; background: var(--gradient-safar); }
+
+  .bg-moon {
+    position: absolute; top: 120px; left: 50%; transform: translateX(-50%);
+    width: 420px; pointer-events: none; z-index: 1; opacity: 0.2;
+    filter: brightness(2.2) contrast(0.8) saturate(1.3);
+    background-size: contain; background-repeat: no-repeat; background-position: center;
+    aspect-ratio: 768 / 1363; mix-blend-mode: screen;
+  }
+
+  .header {
+    display: grid; grid-template-columns: 200px 1fr auto;
+    border-bottom: 1px solid var(--border); position: relative; z-index: 2;
+  }
+  .header-photo { overflow: hidden; position: relative; }
+  .header-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  .header-photo::after { content: ''; position: absolute; right: 0; top: 0; bottom: 0; width: 40px; background: linear-gradient(90deg, transparent, var(--bg-deep)); }
+  .header-center { padding: 40px 28px 36px; display: flex; flex-direction: column; justify-content: center; }
+  .header-center h1 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; letter-spacing: -0.5px; line-height: 1; color: var(--cream); }
+  .header-center .subtitle { font-size: 13px; font-weight: 400; color: var(--sand); margin-top: 5px; }
+  .header-right { padding: 40px 48px 36px 20px; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--border); text-align: right; font-size: 12px; color: var(--sand); line-height: 1.8; position: relative; z-index: 2; }
+  .header-right .doc-label { font-size: 9px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 6px; display: block; }
+  .header-right a { color: var(--terracotta); text-decoration: none; transition: color 0.2s; }
+  .header-right a:hover { color: var(--terracotta-glow); }
+
+  .bio { padding: 32px 48px; border-bottom: 1px solid var(--border); position: relative; z-index: 2; overflow: hidden; }
+  .bio::before { content: '\0633\0641\0631'; position: absolute; right: 48px; top: 16px; font-size: 64px; font-family: serif; opacity: 0.04; color: var(--gold); pointer-events: none; }
+  .bio p { font-size: 14.5px; line-height: 1.8; color: var(--cream); max-width: 780px; }
+  .bio strong { color: var(--cream); }
+  .bio .pull-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: #e8c878; margin-top: 16px; line-height: 1.55; padding-left: 16px; border-left: 3px solid var(--gold); opacity: 1; font-weight: 600; }
+
+  .recognition { margin: 24px 48px 0; padding: 16px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; gap: 14px; position: relative; z-index: 2; }
+  .recognition .badge { background: var(--gold); color: var(--bg-deep); font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; white-space: nowrap; }
+  .recognition p { font-size: 13px; color: var(--cream-dim); }
+  .recognition strong { color: var(--cream); }
+
+  .content { padding: 28px 48px 32px; position: relative; z-index: 2; }
+  .section-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); font-weight: 700; margin-bottom: 16px; margin-top: 28px; display: flex; align-items: center; gap: 12px; }
+  .section-title:first-child { margin-top: 0; }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .media-grid { display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+  .media-item { display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; transition: all 0.2s ease; cursor: pointer; }
+  .media-item:hover { background: var(--bg-card-hover); border-color: #6a7280; transform: translateX(2px); }
+  .media-item.no-link { cursor: default; }
+  .media-item.no-link:hover { transform: none; }
+  .media-icon { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; flex-shrink: 0; background: var(--surface); }
+  .emoji-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--surface); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
+  .media-info { flex: 1; min-width: 0; }
+  .media-name { font-size: 14px; font-weight: 600; color: var(--cream); line-height: 1.3; }
+  .media-ep { color: var(--sand); font-weight: 400; }
+  .media-detail { font-size: 12px; color: var(--sand); margin-top: 2px; line-height: 1.4; }
+  .media-type { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; padding: 3px 8px; border-radius: 4px; flex-shrink: 0; white-space: nowrap; }
+  .type-podcast { color: var(--terracotta); background: rgba(196,97,58,0.12); }
+  .type-soon { color: var(--sage-light); background: rgba(107,140,94,0.12); }
+  .type-article { color: #c89b6b; background: rgba(200,155,107,0.12); }
+  .type-press { color: var(--gold); background: rgba(184,148,62,0.12); }
+  .type-keynote { color: #e8c84a; background: rgba(232,200,74,0.12); }
+  .type-panel { color: var(--sage-light); background: rgba(107,140,94,0.12); }
+  .type-speaker { color: #8ca8c8; background: rgba(140,168,200,0.12); }
+  .type-lecture { color: #8ca8c8; background: rgba(140,168,200,0.12); }
+  .type-video { color: #e07070; background: rgba(224,112,112,0.12); }
+  .media-arrow { color: var(--mist); font-size: 14px; flex-shrink: 0; transition: transform 0.2s; }
+  .media-item:hover .media-arrow { transform: translateX(3px); color: var(--terracotta); }
+
+  .topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .topic-chip { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 11px 14px 11px 18px; font-size: 12.5px; font-weight: 500; color: var(--cream-dim); position: relative; }
+  .topic-chip::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 6px 0 0 6px; }
+  .topic-chip:nth-child(1)::before { background: var(--terracotta); }
+  .topic-chip:nth-child(2)::before { background: var(--gold); }
+  .topic-chip:nth-child(3)::before { background: var(--sage); }
+  .topic-chip:nth-child(4)::before { background: #8ca8c8; }
+  .topic-chip:nth-child(5)::before { background: var(--sand); }
+  .topic-chip:nth-child(6)::before { background: var(--terracotta); }
+
+  .footer { padding: 20px 48px 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
+  .footer-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .footer-tag { background: var(--surface); border: 1px solid var(--border); padding: 4px 10px; border-radius: 4px; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; color: var(--sand); }
+  .footer-contact { text-align: right; font-size: 12px; color: var(--sand); line-height: 1.8; }
+  .footer-contact a { color: var(--terracotta); text-decoration: none; }
+
+  @media (max-width: 700px) {
+    .header { grid-template-columns: 1fr; }
+    .header-photo { height: 200px; }
+    .header-right { border-left: none; border-top: 1px solid var(--border); text-align: left; padding: 16px 24px; }
+    .header-center { padding: 24px; }
+    .bio, .content, .footer { padding-left: 24px; padding-right: 24px; }
+    .recognition { margin-left: 24px; margin-right: 24px; }
+    .topics-grid { grid-template-columns: 1fr; }
+    .footer { flex-direction: column; gap: 16px; }
+    .footer-contact { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="bg-moon" style="background-image:url('safar-moon-eye.png')"></div>
+  <div class="gradient-bar"></div>
+
+  <div class="header">
+    <div class="header-photo">
+      <img src="sabba-headshot.png" alt="Sabba Nazhand">
+    </div>
+    <div class="header-center">
+      <h1>Sabba Nazhand</h1>
+      <div class="subtitle">Founder &amp; CEO, Safar &mdash; The First Operating System for Human Transformation</div>
+    </div>
+    <div class="header-right">
+      <span class="doc-label">Media Kit</span>
+      <a href="https://joinsafar.com">joinsafar.com</a><br>
+      <a href="https://linkedin.com/in/sabbanazhand">linkedin.com/in/sabbanazhand</a><br>
+      <a href="mailto:pr@joinsafar.com">pr@joinsafar.com</a>
+    </div>
+  </div>
+
+  <div class="bio">
+    <p><strong>Sabba</strong> is a seasoned tech executive, founder, and advisor with 20+ of experience in sales and leadership. He is the Founder &amp; CEO of <strong>Safar</strong>, an integration operating system for human transformation. His journey has been shaped by a commitment to authenticity and conscious leadership across the emerging psychedelic ecosystem. His personal transformation through plant medicine has redefined how he approaches both life, business, and leading with empathy, intention, and a focus on holistic well-being.</p>
+    <p style="margin-top:12px">Born in Tehran during the Iran-Iraq War and raised as an asylum seeker in the United States, Sabba brings a unique perspective to the challenges of personal growth and resilience.</p>
+    <p style="margin-top:12px">He&rsquo;s led teams across three continents, leading north of $500M in revenue and working with some of the most impactful companies on the planet, and is passionate about integrating technology with human connection.</p>
+    <div class="pull-quote">&ldquo;People don&rsquo;t fail because they lack insight. They fail because insight fades. The in-between is where transformation lives or dies.&rdquo;</div>
+  </div>
+
+  <div class="recognition">
+    <span class="badge">Featured</span>
+    <p>Named to <strong>Webdelics Top 100 Thought Leaders &amp; Content Creators</strong> in psychedelic integration and conscious leadership.</p>
+  </div>
+
+  <div class="content">
+    <div class="section-title">Podcast Appearances</div>
+    <div class="media-grid">
+      <a class="media-item" href="https://music.amazon.com/podcasts/b6e1a2ab-c983-45e1-af04-950ae749aba4/psychedelic-stories" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=psychedelicstories.co" alt=""><div class="media-info"><div class="media-name">Psychedelic Stories</div><div class="media-detail">Origin story &mdash; Tehran, asylum, 5-MeO-DMT, and the birth of Safar</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://open.spotify.com/episode/1fgldyJ0rUUYQujGKzLuqD" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=entrepreneursinrecovery.com" alt=""><div class="media-info"><div class="media-name">Entrepreneurs in Recovery <span class="media-ep">Ep. 061</span></div><div class="media-detail">AI, psychedelics &amp; accessibility in mental health</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://www.leadershipedelics.com/1860291/episodes/12715722-sabba-nazhand-conscious-leadership-fatherhood-psychedelic-business-and-personal-growth" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=leadershipedelics.com" alt=""><div class="media-info"><div class="media-name">Leadershipedelics <span class="media-ep">S3 Ep. 8</span></div><div class="media-detail">Conscious leadership, fatherhood &amp; psychedelic business</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://rephonic.com/podcasts/webdelics-podcast" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=webdelics.com" alt=""><div class="media-info"><div class="media-name">Webdelics</div><div class="media-detail">Embracing emotions &amp; masculinity &mdash; transformational journey with psychedelics</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://creators.spotify.com/pod/profile/bishoy-tadros/episodes/Ep-126---Integration--Innovation---Moving-With-Intention-Featuring-Sabba-Nazhand-e31854c" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=mile40podcast.com" alt=""><div class="media-info"><div class="media-name">Mile 40 Podcast <span class="media-ep">Ep. 126</span></div><div class="media-detail">Integration, innovation &amp; moving with intention</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://podcasts.apple.com/mu/podcast/conscious-at-work-w-sabba-nazhand/id1594188937?i=1000646049216" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=podcasts.apple.com" alt=""><div class="media-info"><div class="media-name">Bridges Between Us</div><div class="media-detail">Conscious sales, burnout recovery &amp; the future of work</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://open.spotify.com/episode/1lmR7k9yMydDhFYvjRb4Un" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=spotify.com" alt=""><div class="media-info"><div class="media-name">The TripSitting Podcast <span class="media-ep">Ep. 070</span></div><div class="media-detail">Coming back to ourselves &mdash; fleeing Iran &amp; healing through psychedelics</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://podscan.fm/podcasts/truelife/episodes/sabba-nazhand-amp-jack-gorsline-psychedelic-science-exodous" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=podscan.fm" alt=""><div class="media-info"><div class="media-name">TrueLife</div><div class="media-detail">Psychedelic Science Exodus &mdash; Safar, integration &amp; the future of the field</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://www.minoritytrip.com" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=minoritytrip.com" alt=""><div class="media-info"><div class="media-name">Minority Trip Report&trade; <span class="media-ep">&mdash; Co-Creator</span></div><div class="media-detail">Spotlighting underrepresented voices in psychedelics &amp; consciousness</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://www.podchaser.com/podcasts/startup-sales-686446/episodes/interview-for-top-sales-with-s-45755565" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=podchaser.com" alt=""><div class="media-info"><div class="media-name">Startup Sales <span class="media-ep">Ep. 059</span></div><div class="media-detail">Building top-performing enterprise sales teams (WorkGenius era)</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://podcasts.apple.com/gb/podcast/sabba-nazhand-workgenius-julian-kahlon-project-verte/id954158712?i=1000452731102" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=podcasts.apple.com" alt=""><div class="media-info"><div class="media-name">Fashion Is Your Business</div><div class="media-detail">Recorded live at eTail East, Boston &mdash; AI workforce solutions</div></div><span class="media-type type-podcast">Podcast</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://open.spotify.com/show/7EKXTOqgKIXe6kmlwkJvts" target="_blank" rel="noopener" style="border-color:rgba(107,140,94,0.3)"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=spotify.com" alt=""><div class="media-info"><div class="media-name">WELLPOWER: Breath, Cold, &amp; Biohacking Podcast</div><div class="media-detail">Episode coming soon</div></div><span class="media-type type-soon">Coming Soon</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://open.spotify.com/show/10xHqbyEmuubsGLBHPwAwx" target="_blank" rel="noopener" style="border-color:rgba(107,140,94,0.3)"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=psychedelicscene.com" alt=""><div class="media-info"><div class="media-name">The Psychedelic Scene Podcast</div><div class="media-detail">Episode coming soon</div></div><span class="media-type type-soon">Coming Soon</span><span class="media-arrow">&rarr;</span></a>
+    </div>
+
+    <div class="section-title">Published Articles</div>
+    <div class="media-grid">
+      <a class="media-item" href="https://realitysandwich.com/psychedelics-integration-connection/" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=realitysandwich.com" alt=""><div class="media-info"><div class="media-name">Reality Sandwich</div><div class="media-detail">The Hive and the Seeker: Psychedelics, Integration, and the Composition of Connection</div></div><span class="media-type type-article">Article</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://psychedelicscene.com/2026/04/07/generational-trauma/" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=psychedelicscene.com" alt=""><div class="media-info"><div class="media-name">Psychedelic Scene Magazine</div><div class="media-detail">On Generational Trauma: You&rsquo;re Not Broken &mdash; You&rsquo;re Running Someone Else&rsquo;s Code</div></div><span class="media-type type-article">Article</span><span class="media-arrow">&rarr;</span></a>
+    </div>
+
+    <div class="section-title">Press &amp; Features</div>
+    <div class="media-grid">
+      <a class="media-item" href="https://www.tricycleday.com/p/sabba-nazhand" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=tricycleday.com" alt=""><div class="media-info"><div class="media-name">Tricycle Day <span class="media-ep">&mdash; Featured Interview</span></div><div class="media-detail">AI in psychedelic healing, indigenous wisdom in tech, and what&rsquo;s broken about integration (80K+ subscribers)</div></div><span class="media-type type-press">Press</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://www.send2press.com/wire/integration-enterprises-pbc-dba-safar-launches-the-first-operating-system-for-human-transformation/" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=send2press.com" alt=""><div class="media-info"><div class="media-name">Send2Press / National Newswire <span class="media-ep">&mdash; Launch Coverage</span></div><div class="media-detail">Safar launch syndicated across 15+ outlets including Fox21, Florida &amp; Massachusetts Newswire</div></div><span class="media-type type-press">Press</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://www.webdelics.com/top-lists/thought-leaders-content-creators" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=webdelics.com" alt=""><div class="media-info"><div class="media-name">Webdelics Top 100 <span class="media-ep">&mdash; Thought Leader Recognition</span></div><div class="media-detail">Named among top thought leaders and content creators in the psychedelic space</div></div><span class="media-type type-press">Press</span><span class="media-arrow">&rarr;</span></a>
+    </div>
+
+    <div class="section-title">Speaking, Keynotes &amp; Panels</div>
+    <div class="media-grid">
+      <a class="media-item" href="https://www.liiightspace.com/post/psychedelics-technology-panel" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=liiightspace.com" alt=""><div class="media-info"><div class="media-name">Awakening 2025 <span class="media-ep">&mdash; Keynote &amp; Panelist</span></div><div class="media-detail">Keynote speaker + Psychedelics &amp; Technology panel with the Psychedelic Institute of Los Angeles</div></div><span class="media-type type-keynote">Keynote</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://www.thepsychedelicassembly.com/" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=thepsychedelicassembly.com" alt=""><div class="media-info"><div class="media-name">The Psychedelic Assembly</div><div class="media-detail">From War-torn Iran to Conscious Leadership</div></div><span class="media-type type-speaker">Speaker</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://www.globalpsychedelicweek.com/speakers" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=globalpsychedelicweek.com" alt=""><div class="media-info"><div class="media-name">Global Psychedelic Week</div><div class="media-detail">Psychedelics &amp; AI: Consciousness, Technology, and the Future</div></div><span class="media-type type-speaker">Speaker</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://inthebeehive.com/panels" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=inthebeehive.com" alt=""><div class="media-info"><div class="media-name">In The Beehive</div><div class="media-detail">Emerge and See: Psychedelics and the Future</div></div><span class="media-type type-panel">Panel</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://hollyhock.ca/people/sabba-nazhand/" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=hollyhock.ca" alt=""><div class="media-info"><div class="media-name">Hollyhock &mdash; Canadian Psychedelic Summit 2023</div><div class="media-detail">Presenter at Cortes Island retreat centre</div></div><span class="media-type type-speaker">Speaker</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://sensoria.rsvpify.com/" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=rsvpify.com" alt=""><div class="media-info"><div class="media-name">Sensoria Presents</div><div class="media-detail">Fundraiser for the Shulgin Farm</div></div><span class="media-type type-speaker">Speaker</span><span class="media-arrow">&rarr;</span></a>
+      <a class="media-item" href="https://www.youtube.com/watch?v=TXjCePHehbM" target="_blank" rel="noopener"><img class="media-icon" src="https://www.google.com/s2/favicons?sz=64&domain=youtube.com" alt=""><div class="media-info"><div class="media-name">AMA &mdash; Why Business Leaders Are Turning to Psychedelics</div><div class="media-detail">Video &mdash; YouTube</div></div><span class="media-type type-video">Video</span><span class="media-arrow">&rarr;</span></a>
+      <div class="media-item no-link"><div class="emoji-icon">&#x1F393;</div><div class="media-info"><div class="media-name">George Washington University <span class="media-ep">&mdash; Guest Lecturer</span></div><div class="media-detail">School of Business &mdash; Event Management &amp; Hospitality programs</div></div><span class="media-type type-lecture">Lecture</span></div>
+    </div>
+
+    <div class="section-title">Available Speaking Topics</div>
+    <div class="topics-grid">
+      <div class="topic-chip">The Integration Gap &mdash; Why Insight Without Structure Fades</div>
+      <div class="topic-chip">Ethics of Building in Sacred &amp; Healing Spaces</div>
+      <div class="topic-chip">AI Meets the Soul &mdash; Technology for Human Transformation</div>
+      <div class="topic-chip">Intergenerational Trauma &amp; the Immigrant Founder Story</div>
+      <div class="topic-chip">Conscious Sales Leadership &amp; Vulnerability at Work</div>
+      <div class="topic-chip">Measurement as Medicine &mdash; Making the Invisible Visible</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-tags">
+      <span class="footer-tag">Psychedelics</span>
+      <span class="footer-tag">AI + Healing</span>
+      <span class="footer-tag">Conscious Leadership</span>
+      <span class="footer-tag">Integration</span>
+      <span class="footer-tag">Founder Story</span>
+    </div>
+    <div class="footer-contact">
+      Booking &amp; media: <a href="mailto:pr@joinsafar.com">pr@joinsafar.com</a><br>
+      <a href="https://joinsafar.com">joinsafar.com</a> &middot; <a href="https://linkedin.com/in/sabbanazhand">LinkedIn</a> &middot; <a href="https://instagram.com/sabba_nazhand">Instagram</a>
+    </div>
+  </div>
+</div>
+</body>
 </html>
